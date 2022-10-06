@@ -5,7 +5,7 @@ resource "aws_instance" "MaciejBekasDemoEasy" {
     availability_zone = each.value.az
     subnet_id = var.Subnet_IDs["${each.value.num}"]
     key_name = "MaciejBekasBootcampPL"
-    vpc_security_group_ids = [aws_security_group.MaciejBekas-easy-sec-group.id]
+    vpc_security_group_ids = ["${var.SEC_GROUP_ID}"]
     user_data = file("docker.sh")
     credit_specification{
         cpu_credits = "unlimited"
