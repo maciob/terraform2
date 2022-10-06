@@ -1,6 +1,9 @@
 variable "KEY_PATH"{
     default = "/home/ubuntu/MaciejBekasKey.pem"
 }
+variable "instance_type"{
+    default = "aws_lb_target_group.target_group.arn"
+}
 variable "Subnet_IDs"{
     type = list(string)
 }
