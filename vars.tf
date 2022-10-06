@@ -13,11 +13,3 @@ variable "MY_SUBNETS"{
         az = string
     }))
 }
-variable "INSTANCES"{
-    type = map(object({
-        az = string
-        ver = string
-        name = string
-        num = number
-    }))
-}
