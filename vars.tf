@@ -49,7 +49,6 @@ variable "VPC_GROUP_ID"{
 
 variable "VPC"{
     type = string
-    default = "${aws_vpc.MaciejBekas-easy-vpc.id}"
 }
 
 variable "MY_SUBNETS"{
