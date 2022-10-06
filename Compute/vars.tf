@@ -1,3 +1,6 @@
+variable "KEY_PATH"{
+    default = "/home/ubuntu/MaciejBekasKey.pem"
+}
 variable "Subnet_IDs"{
     type = list(string)
 }
