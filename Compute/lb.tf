@@ -13,15 +13,10 @@ resource "aws_lb_target_group" "target_group" {
   vpc_id   = var.VPC_GROUP_ID
 }
 
-resource "aws_lb_target_group_attachment" "attach1" {
+resource "aws_lb_target_group_attachment" "attach" {
+  for_each = var.INSTANCES
   target_group_arn = aws_lb_target_group.target_group.arn
-  target_id        = aws_instance.MaciejBekasDemoEasy["a"].id
-  port             = 8080
-}
-
-resource "aws_lb_target_group_attachment" "attach2" {
-  target_group_arn = aws_lb_target_group.target_group.arn
-  target_id        = aws_instance.MaciejBekasDemoEasy["b"].id
+  target_id        = aws_instance.MaciejBekasDemoEasy["${each.value.ver}"].id
   port             = 8080
 }
 
