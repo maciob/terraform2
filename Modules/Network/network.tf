@@ -22,7 +22,7 @@ resource "aws_route_table" "MaciejBekas-easy-public-crt" {
 
 resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet"{
     for_each = var.MY_SUBNETS
-    subnet_id = aws_subnet.MY_SUBNETS[each_key].id
+    subnet_id = aws_subnet.MY_SUBNETS[eachkey].id
     route_table_id = aws_route_table.MaciejBekas-easy-public-crt.id
 }
 
