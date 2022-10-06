@@ -19,4 +19,6 @@ module "Compute"{
 module "Network"{
     source = "./Modules/Network"
     MY_SUBNETS = var.MY_SUBNETS
+    INGRESS = var.INGRESS
+    EGRESS = var.EGRESS
 }
