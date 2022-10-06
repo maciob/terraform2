@@ -1,5 +1,4 @@
 module "Compute"{
-
     source = "./Modules/Compute"
 
     depends_on = [module.Network]
@@ -15,13 +14,9 @@ module "Compute"{
     created_by = var.created_by
     bootcamp = var.bootcamp
     ami = var.ami
-
 }
 
 module "Network"{
-
     source = "./Modules/Network"
-
     MY_SUBNETS = var.MY_SUBNETS
-
 }
