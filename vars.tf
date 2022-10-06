@@ -47,10 +47,6 @@ variable "VPC_GROUP_ID"{
 
 #=====VAR NETWORK
 
-variable "VPC"{
-    type = string
-}
-
 variable "MY_SUBNETS"{
     type = map(object({
         cidr = string
