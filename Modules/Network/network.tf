@@ -6,7 +6,7 @@ resource "aws_internet_gateway" "MaciejBekas-easy-igw" {
 }
 
 resource "aws_route_table" "MaciejBekas-easy-public-crt" {
-    vpc_id = var.VPC
+    vpc_id = "${aws_vpc.MaciejBekas-easy-vpc.id}"
     
     route {
         //associated subnet can reach everywhere
