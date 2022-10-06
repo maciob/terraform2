@@ -17,13 +17,13 @@ variable "ami"{
     description = ""
 }
 variable "Subnet_IDs"{
-    type = list(string)
+    description = ""
 }
 variable "SEC_GROUP_ID"{
-    type = string
+    description = ""
 }
 variable "VPC_GROUP_ID"{
-    type = string
+    description = ""
 }
 variable "INSTANCES"{
     description = ""

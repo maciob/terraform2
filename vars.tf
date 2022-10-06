@@ -35,6 +35,19 @@ variable "INSTANCES"{
 
 #=====VAR NETWORK->COMPUTE
 
+variable "Subnet_IDs"{
+    type = list(string)
+    default = [""]
+}
+variable "SEC_GROUP_ID"{
+    type = string
+    default = ""
+}
+variable "VPC_GROUP_ID"{
+    type = string
+    default = ""
+
+}
 
 #=====VAR NETWORK
 
