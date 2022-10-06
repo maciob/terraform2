@@ -21,4 +21,5 @@ module "Network"{
     MY_SUBNETS = var.MY_SUBNETS
     INGRESS = var.INGRESS
     EGRESS = var.EGRESS
+    EGRESS.cidr = var.EGRESS.cidr
 }
