@@ -35,14 +35,14 @@ MY_SUBNETS = {
 
 
 
-EGRESS = [
-  {
-    "from_port" = 0,
-    "to_port" = 0,
-    "protocol" = -1,
-    "cidr_blocks" = ["0.0.0.0/0"]
+EGRESS = {
+  "a" = {
+    from = 0
+    to = 0
+    prot = -1
+    cidr = ["0.0.0.0/0"]
   }
-]
+}
 INGRESS = {
   "a" = {
     from = 22
