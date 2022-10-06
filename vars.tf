@@ -1,3 +1,6 @@
+variable "AWS_REGION" {    
+    default = "eu-west-2"
+}
 variable "MY_SUBNETS"{
     type = map(object({
         cidr = string
