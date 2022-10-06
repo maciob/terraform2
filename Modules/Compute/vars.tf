@@ -17,16 +17,6 @@ variable "ami"{
     description = ""
 }
 
-variable "Subnet_IDs"{
-    description = ""
-}
-variable "SEC_GROUP_ID"{
-    description = ""
-}
-variable "VPC_GROUP_ID"{
-    description = ""
-}
-
 variable "INSTANCES"{
     description = ""
 }
