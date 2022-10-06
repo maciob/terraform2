@@ -28,10 +28,10 @@ resource "aws_security_group" "MaciejBekas-easy-sec-group" {
     dynamic "egress" {
         for_each = var.EGRESS
         content {
-            from_port = EGRESS.from
-            to_port = EGRESS.to
-            protocol = EGRESS.prot
-            cidr_blocks = EGRESS.cidr
+            from_port = each.value.from
+            to_port = each.value.to
+            protocol = each.value.prot
+            cidr_blocks = each.value.cidr
         }
     }
     dynamic "ingress" {

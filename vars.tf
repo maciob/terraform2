@@ -65,7 +65,7 @@ variable "INGRESS"{
     }))
 }
 variable "EGRESS"{
-    type = map(object({
+    type = list(object({
         from = number
         to = number
         prot = any
