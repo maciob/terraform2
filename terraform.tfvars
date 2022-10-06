@@ -22,3 +22,10 @@ MY_SUBNETS = {
     az   = "eu-west-2b"
   }
 }
+
+KEYPATH = "/home/ubuntu/MaciejBekasKey.pem"
+instance_type = "t2.micro"
+KEY_NAME = "MaciejBekasBootcampPL"
+created_by = "MaciejBekasBootcampPL"
+bootcamp = "poland1"
+ami = "ami-0f540e9f488cfa27d"

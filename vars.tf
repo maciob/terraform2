@@ -1,31 +1,39 @@
+#=====VAR GLOBAL
+
 variable "AWS_REGION" {    
     default = "eu-west-2"
 }
 
+#=====VAR COMPUTE
+
 variable "KEY_PATH"{
     type = string
-    default = "/home/ubuntu/MaciejBekasKey.pem"
 }
 variable "instance_type"{
     type = string
-    default = "t2.micro"
 }
 variable "KEY_NAME"{
     type = string
-    default = "MaciejBekasBootcampPL"
 }
 variable "created_by"{
     type = string
-    default = "MaciejBekas"
 }
 variable "bootcamp"{
     type = string
-    default = "poland1"
 }
 variable "ami"{
     type = string
-    default = "ami-0f540e9f488cfa27d"
 }
+variable "INSTANCES"{
+    type = map(object({
+        az = string
+        ver = string
+        name = string
+        num = number
+    }))
+}
+
+#=====VAR NETWORK->COMPUTE
 
 variable "Subnet_IDs"{
     type = list(string)
@@ -37,17 +45,16 @@ variable "VPC_GROUP_ID"{
     type = string
 }
 
+#=====VAR NETWORK
+
+variable "VPC"{
+    type = string
+    default = "${aws_vpc.MaciejBekas-easy-vpc.id}"
+}
+
 variable "MY_SUBNETS"{
     type = map(object({
         cidr = string
         az = string
-    }))
-}
-variable "INSTANCES"{
-    type = map(object({
-        az = string
-        ver = string
-        name = string
-        num = number
     }))
 }
