@@ -18,5 +18,6 @@ variable "INSTANCES"{
         az = string
         ver = string
         name = string
+        num = int
     }))
 }

@@ -12,9 +12,9 @@ variable "INSTANCES"{
         az = string
         ver = string
         name = string
+        num = int
     }))
 }
-variable "subnet_id_1"{
-    type = string
-    default = "XD"
+variable "Subnet_IDs"{
+    type = list(string)
 }
