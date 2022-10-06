@@ -1,6 +1,6 @@
 module "Compute"{
     source = "./Modules/Compute"
-    depends_on = module.Network
+    depends_on = [module.Network]
     Subnet_IDs = module.Network.Subnet_IDs
     SEC_GROUP_ID = module.Network.SEC_GROUP_ID
     VPC_GROUP_ID = module.Network.VPC_GROUP_ID
