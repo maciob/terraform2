@@ -28,17 +28,17 @@ resource "aws_security_group" "MaciejBekas-easy-sec-group" {
     
     egress {
         for_each = var.EGRESS
-        from_port = each.value.from_port
-        to_port = each.value.to_port
-        protocol = each.value.protocol
-        cidr_blocks = each.value.cidr_blocks
+        from_port = each.value.from
+        to_port = each.value.to
+        protocol = each.value.prot
+        cidr_blocks = each.value.cidr
     }
     ingress {
         for_each = var.INGRESS
-        from_port = each.value.from_port
-        to_port = each.value.to_port
-        protocol = each.value.protocol
-        cidr_blocks = each.value.cidr_blocks
+        from_port = each.value.from
+        to_port = each.value.to
+        protocol = each.value.prot
+        cidr_blocks = each.value.cidr
     }
     tags = {
         Name = "MaciejBekas-easy-sec-group"

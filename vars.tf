@@ -58,17 +58,17 @@ variable "MY_SUBNETS"{
 }
 variable "INGRESS"{
     type = map(object({
-        from_port = number
-        to_port = number
-        protocol = any
-        cidr_blocks = list(string)
+        from = number
+        to = number
+        prot = any
+        cidr = list(string)
     }))
 }
 variable "EGRESS"{
     type = map(object({
-        from_port = number
-        to_port = number
-        protocol = any
-        cidr_blocks = list(string)
+        from = number
+        to = number
+        prot = any
+        cidr = list(string)
     }))
 }
