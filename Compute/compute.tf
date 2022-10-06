@@ -3,7 +3,7 @@ resource "aws_instance" "MaciejBekasDemoEasy" {
     ami = "ami-0f540e9f488cfa27d"
     instance_type = "t2.micro"
     availability_zone = each.value.az
-    subnet_id = "${module.Network.subnet_id_1}"
+    subnet_id = "${subnet_id_1}"
     key_name = "MaciejBekasBootcampPL"
     vpc_security_group_ids = [aws_security_group.MaciejBekas-easy-sec-group.id]
     user_data = file("docker.sh")
