@@ -12,7 +12,7 @@ variable "INSTANCES"{
         az = string
         ver = string
         name = string
-        num = int
+        num = number
     }))
 }
 variable "Subnet_IDs"{
