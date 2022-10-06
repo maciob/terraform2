@@ -1,10 +1,10 @@
 module "Compute"{
     source = "./Compute"
     INSTANCES = var.INSTANCES
-    Network = module.Network
+    subnet_id_1 = module.Network.subnet_id_1
 }
 module "Network"{
     source = "./Network"
     MY_SUBNETS = var.MY_SUBNETS
-    Compute = module.Compute
+    
 }
