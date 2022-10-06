@@ -14,3 +14,7 @@ variable "INSTANCES"{
         name = string
     }))
 }
+variable "subnet_id_1"{
+    type = string
+    default = "XD"
+}
