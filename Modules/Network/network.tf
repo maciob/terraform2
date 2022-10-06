@@ -1,22 +1,19 @@
 resource "aws_internet_gateway" "MaciejBekas-easy-igw" {
-    vpc_id = "${aws_vpc.MaciejBekas-easy-vpc.id}"
+    vpc_id = aws_vpc.MaciejBekas-easy-vpc.id
     tags = {
         Name = "MaciejBekas-easy-igw"
     }
 }
 
 resource "aws_route_table" "MaciejBekas-easy-public-crt" {
-    vpc_id = "${aws_vpc.MaciejBekas-easy-vpc.id}"
+    vpc_id = aws_vpc.MaciejBekas-easy-vpc.id
     
     route {
-        //associated subnet can reach everywhere
         cidr_block = "0.0.0.0/0" 
-        //CRT uses this IGW to reach internet
-        gateway_id = "${aws_internet_gateway.MaciejBekas-easy-igw.id}" 
+        gateway_id = aws_internet_gateway.MaciejBekas-easy-igw.id
     }
-    
     tags = {
-        Name = "prod-public-crt"
+        Name = "MaciejBekas-public-crt"
     }
 }
 
@@ -27,7 +24,7 @@ resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet"{
 }
 
 resource "aws_security_group" "MaciejBekas-easy-sec-group" {
-    vpc_id = "${aws_vpc.MaciejBekas-easy-vpc.id}"
+    vpc_id = aws_vpc.MaciejBekas-easy-vpc.id
     
     egress {
         from_port = 0
