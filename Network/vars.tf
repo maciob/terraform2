@@ -13,3 +13,5 @@ variable "MY_SUBNETS"{
         az = string
     }))
 }
+
+
