@@ -37,10 +37,10 @@ MY_SUBNETS = {
 
 EGRESS = {
   "a" = {
-    "from" = 0
-    "to" = 0
-    "prot" = -1
-    "cidr" = ["0.0.0.0/0"]
+    from = 0
+    to = 0
+    prot = -1
+    cidr = ["0.0.0.0/0"]
   }
 }
 INGRESS = {
