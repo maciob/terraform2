@@ -27,28 +27,18 @@ resource "aws_security_group" "MaciejBekas-easy-sec-group" {
     vpc_id = aws_vpc.MaciejBekas-easy-vpc.id
     
     egress {
-        from_port = 0
-        to_port = 0
-        protocol = -1
-        cidr_blocks = ["0.0.0.0/0"]
+        for_each = var.EGRESS
+        from_port = each.value.from_port
+        to_port = each.value.to_port
+        protocol = each.value.protocol
+        cidr_blocks = each.value.cidr_blocks
     }
     ingress {
-        from_port = 22
-        to_port = 22
-        protocol = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-    ingress {
-        from_port = 80
-        to_port = 80
-        protocol = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
-    }
-    ingress {
-        from_port = 8080
-        to_port = 8080
-        protocol = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
+        for_each = var.INGRESS
+        from_port = each.value.from_port
+        to_port = each.value.to_port
+        protocol = each.value.protocol
+        cidr_blocks = each.value.cidr_blocks
     }
     tags = {
         Name = "MaciejBekas-easy-sec-group"
