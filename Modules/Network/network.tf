@@ -27,6 +27,7 @@ resource "aws_security_group" "MaciejBekas-easy-sec-group" {
     vpc_id = aws_vpc.MaciejBekas-easy-vpc.id
     dynamic egress {
         for_each = toset(var.EGRESS)
+        iterator = "egress"
         content{
             from_port = lookup(each.value, "from", null)
             to_port = lookup(each.value, "to", null)
@@ -36,6 +37,7 @@ resource "aws_security_group" "MaciejBekas-easy-sec-group" {
     }
     dynamic ingress {
         for_each = toset(var.INGRESS)
+        iterator = "ingress"
         content{
             from_port = lookup(each.value, "from", null)
             to_port = lookup(each.value, "to", null)
