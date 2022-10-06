@@ -25,16 +25,15 @@ resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet"{
 
 resource "aws_security_group" "MaciejBekas-easy-sec-group" {
     vpc_id = aws_vpc.MaciejBekas-easy-vpc.id
-    
+    for_each = var.EGRESS
     egress {
-        for_each = var.EGRESS
         from_port = each.value.from
         to_port = each.value.to
         protocol = each.value.prot
         cidr_blocks = each.value.cidr
     }
+    for_each = var.INGRESS
     ingress {
-        for_each = var.INGRESS
         from_port = each.value.from
         to_port = each.value.to
         protocol = each.value.prot
