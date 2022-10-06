@@ -21,13 +21,9 @@ resource "aws_route_table" "MaciejBekas-easy-public-crt" {
 }
 
 resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet"{
-    subnet_id = "${aws_subnet.MY_SUBNETS["a"].id}"
-    route_table_id = "${aws_route_table.MaciejBekas-easy-public-crt.id}"
-}
-
-resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet-2"{
-    subnet_id = "${aws_subnet.MY_SUBNETS["b"].id}"
-    route_table_id = "${aws_route_table.MaciejBekas-easy-public-crt.id}"
+    for_each = var.MY_SUBNETS
+    subnet_id = aws_subnet.MY_SUBNETS[each_key].id
+    route_table_id = aws_route_table.MaciejBekas-easy-public-crt.id
 }
 
 resource "aws_security_group" "MaciejBekas-easy-sec-group" {
