@@ -30,7 +30,7 @@ resource "aws_security_group" "MaciejBekas-easy-sec-group" {
         content{
             from_port = lookup(each.value, "from", null)
             to_port = lookup(each.value, "to", null)
-            Protocol = lookup(each.value, "prot", null)
+            protocol = lookup(each.value, "prot", null)
             cidr_blocks = lookup(each.value, "cidr", null)
         }
     }
@@ -39,7 +39,7 @@ resource "aws_security_group" "MaciejBekas-easy-sec-group" {
         content{
             from_port = lookup(each.value, "from", null)
             to_port = lookup(each.value, "to", null)
-            Protocol = lookup(each.value, "prot", null)
+            protocol = lookup(each.value, "prot", null)
             cidr_blocks = lookup(each.value, "cidr", null)
         }
     }
