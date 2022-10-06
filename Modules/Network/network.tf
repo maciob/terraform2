@@ -16,17 +16,14 @@ resource "aws_route_table" "MaciejBekas-easy-public-crt" {
     }
     
     tags = {
-        Name = "prod-public-crt"
+        Name = "MaciejBekas-public-crt"
     }
 }
 
-resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet-1"{
+resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet"{
+    for_each = var.MY_SUBNETS
+    name = "MaciejBekas-easy-crta-public-subnet-${each.value.az}"
     subnet_id = "${aws_subnet.MY_SUBNETS["a"].id}"
-    route_table_id = "${aws_route_table.MaciejBekas-easy-public-crt.id}"
-}
-
-resource "aws_route_table_association" "MaciejBekas-easy-crta-public-subnet-2"{
-    subnet_id = "${aws_subnet.MY_SUBNETS["b"].id}"
     route_table_id = "${aws_route_table.MaciejBekas-easy-public-crt.id}"
 }
 

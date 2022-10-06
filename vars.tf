@@ -46,7 +46,6 @@ variable "SEC_GROUP_ID"{
 variable "VPC_GROUP_ID"{
     type = string
     default = ""
-
 }
 
 #=====VAR NETWORK
