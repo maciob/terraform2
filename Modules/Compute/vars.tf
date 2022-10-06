@@ -18,12 +18,15 @@ variable "ami"{
 }
 variable "Subnet_IDs"{
     description = ""
+    default = [""]
 }
 variable "SEC_GROUP_ID"{
     description = ""
+    default = ""
 }
 variable "VPC_GROUP_ID"{
     description = ""
+    default = ""
 }
 variable "INSTANCES"{
     description = ""
