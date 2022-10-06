@@ -65,10 +65,10 @@ variable "INGRESS"{
     }))
 }
 variable "EGRESS"{
-    type = map(object({
+    type = object({
         from = number
         to = number
         prot = any
         cidr = list(string)
-    }))
+    })
 }
