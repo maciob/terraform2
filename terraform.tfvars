@@ -49,13 +49,13 @@ INGRESS = {
     to_port = 22
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  }
+  },
   "b" = {
     from_port = 80
     to_port = 80
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
-  }
+  },
   "c" = {
     from_port = 8080
     to_port = 8080
