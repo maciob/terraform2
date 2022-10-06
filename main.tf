@@ -8,5 +8,4 @@ module "Compute"{
 module "Network"{
     source = "./Network"
     MY_SUBNETS = var.MY_SUBNETS
-    
 }

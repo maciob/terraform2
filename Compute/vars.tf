@@ -1,37 +1,32 @@
 variable "KEY_PATH"{
-    default = "/home/ubuntu/MaciejBekasKey.pem"
+    description = ""
 }
 variable "instance_type"{
-    default = "t2.micro"
+    description = ""
 }
 variable "KEY_NAME"{
-    default = "MaciejBekasBootcampPL"
+    description = ""
 }
 variable "created_by"{
-    default = "MaciejBekas"
+    description = ""
 }
 variable "bootcamp"{
-    default = "poland1"
+    description = ""
 }
 variable "ami"{
-    default = "ami-0f540e9f488cfa27d"
+    description = ""
 }
 
 variable "Subnet_IDs"{
-    type = list(string)
+    description = ""
 }
 variable "SEC_GROUP_ID"{
-    type = string
+    description = ""
 }
 variable "VPC_GROUP_ID"{
-    type = string
+    description = ""
 }
 
 variable "INSTANCES"{
-    type = map(object({
-        az = string
-        ver = string
-        name = string
-        num = number
-    }))
+    description = ""
 }
