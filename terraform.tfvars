@@ -35,14 +35,14 @@ MY_SUBNETS = {
 
 
 
-EGRESS = {
-  "a" = {
+EGRESS = [
+  {
     from = 0
     to = 0
     prot = -1
     cidr = ["0.0.0.0/0"]
   }
-}
+]
 INGRESS = {
   "a" = {
     from = 22
