@@ -56,3 +56,7 @@ variable "MY_SUBNETS"{
         az = string
     }))
 }
+
+variable "sec_group_name"{
+    type = string
+}

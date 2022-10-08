@@ -51,6 +51,6 @@ resource "aws_security_group" "MaciejBekas-easy-sec-group" {
         cidr_blocks = ["0.0.0.0/0"]
     }
     tags = {
-        Name = "MaciejBekas-easy-sec-group"
+        Name = var.sec_group_name
     }
 }
