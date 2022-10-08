@@ -56,19 +56,3 @@ variable "MY_SUBNETS"{
         az = string
     }))
 }
-variable "INGRESS"{
-    type = map(object({
-        from = number
-        to = number
-        prot = any
-        cidr = list(string)
-    }))
-}
-variable "EGRESS"{
-    type = list(object({
-        from = number
-        to = number
-        prot = any
-        cidr = list(string)
-    }))
-}

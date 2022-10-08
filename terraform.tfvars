@@ -32,34 +32,3 @@ MY_SUBNETS = {
     az   = "eu-west-2b"
   }
 }
-
-
-
-EGRESS = [
-  {
-    from = 0
-    to = 0
-    prot = -1
-    cidr = ["0.0.0.0/0"]
-  }
-]
-INGRESS = {
-  "a" = {
-    from = 22
-    to = 22
-    prot = "tcp"
-    cidr = ["0.0.0.0/0"]
-  },
-  "b" = {
-    from = 80
-    to = 80
-    prot = "tcp"
-    cidr = ["0.0.0.0/0"]
-  },
-  "c" = {
-    from = 8080
-    to = 8080
-    prot = "tcp"
-    cidr = ["0.0.0.0/0"]
-  }
-}
